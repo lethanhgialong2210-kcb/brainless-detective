@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bí Mật Căn Phòng Số 13</title>
+<style>
+:root{--bg:#070b1f;--n:#38bdf8;--g:#fbbf24;--pu:#2a1363}
+*{box-sizing:border-box;margin:0}html,body{height:100%}
+body{font-family:"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at 15% 5%,#2a1363,transparent 50%),radial-gradient(circle at 95% 95%,#0b3a6b,transparent 45%),var(--bg);color:#fff;overflow:hidden;font-size:clamp(14px,.7vw + .9vh,24px)}
+#app{display:grid;grid-template-rows:auto 1fr auto;height:100vh}
+header{display:flex;align-items:center;gap:1em;padding:.5em 1em;border-bottom:1px solid #38bdf866;background:#0009}
+.logo{font-weight:900;letter-spacing:.06em;color:var(--g);text-shadow:0 0 14px #fbbf2499;font-size:1.2em}
+.sp{flex:1}.pill{padding:.2em .8em;border:1px solid #38bdf8;border-radius:99px;color:var(--n)}
+#tm{font-size:1.5em;font-weight:800;font-variant-numeric:tabular-nums;color:var(--g)}
+main{display:grid;grid-template-columns:1fr 21em;gap:1em;padding:1em;min-height:0}
+#stage{overflow:auto;min-height:0;animation:fd .5s}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+@keyframes sl{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.side{background:#0b1030cc;border:1px solid #38bdf855;border-radius:14px;padding:1em;overflow:auto}
+.side h3{color:var(--g);margin-bottom:.6em}
+#sb{position:relative;height:calc(3*5.6em)}
+.row{position:absolute;left:0;right:0;height:5.2em;border-left:.5em solid var(--c);background:#ffffff10;border-radius:10px;padding:.4em .7em;transition:top .8s cubic-bezier(.5,0,.2,1),box-shadow .5s;display:grid;grid-template-columns:2em 1fr auto;align-items:center;gap:.4em}
+.row .rk{font-size:1.5em;font-weight:900;color:var(--g)}.row .nm b{display:block}.row .nm small{opacity:.8}
+.row .sc{font-size:1.7em;font-weight:900}.bar{grid-column:1/4;height:.45em;background:#fff2;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--c);transition:width .8s}
+.row.lead{box-shadow:0 0 22px 4px #fbbf24aa;animation:gl 1.6s infinite alternate}
+@keyframes gl{to{box-shadow:0 0 36px 10px #fbbf24ee}}
+.row.act{outline:2px solid #fff}
+.cols{display:grid;grid-template-columns:1.1fr 1fr;gap:1em}
+@media(max-width:1000px){.cols,main{grid-template-columns:1fr}}
+.card{background:#0b1030dd;border:1px solid #38bdf866;border-radius:14px;padding:1.1em;margin-bottom:1em}
+.badge{background:var(--g);color:#000;font-weight:800;padding:.15em .7em;border-radius:99px}
+.qh{display:flex;gap:1em;align-items:center;margin-bottom:.7em}
+.qt{font-size:1.5em;line-height:1.45;font-weight:600}
+.tb{height:.5em;background:#fff2;border-radius:9px;margin:.8em 0;overflow:hidden}.tb i{display:block;height:100%;background:linear-gradient(90deg,var(--n),var(--g));transition:width 1s linear}
+.ans{border:2px solid #22c55e;background:#052e1688;border-radius:12px;padding:.8em;margin-top:.8em;animation:fd .6s}
+.ans p{margin-top:.4em;opacity:.95}.hint{border:2px dashed var(--g);border-radius:12px;padding:.7em;margin-top:.8em;color:#fde68a}
+.done{color:#4ade80;font-weight:700;margin-top:.6em}
+h2.rt{color:var(--g);font-size:1.6em;margin-bottom:.5em;text-shadow:0 0 12px #fbbf2466}
+.letter{background:#f5e9c8;color:#2b1d3f;border-radius:6px;padding:1.2em;font-family:Georgia,serif;font-size:1.15em;line-height:1.6;transform:rotate(-1deg);box-shadow:0 8px 30px #000a}
+.letter p{font-style:italic;color:#4c1d95}
+.evg{display:grid;grid-template-columns:repeat(auto-fill,minmax(8em,1fr));gap:.7em}
+.ev{background:#f3ead6;color:#222;border-radius:6px;padding:.6em;text-align:center;cursor:pointer;font-size:.9em;transition:transform .2s,box-shadow .2s;border-bottom:4px solid #c9a227}
+.ev:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:0 0 16px var(--g)}.ev span{font-size:2.4em;display:block}.ev.seen{opacity:.75}
+.wt{display:flex;gap:.5em;flex-wrap:wrap;margin-bottom:.6em}
+.btn,.wt button,.tpb button{background:#1e1b4b;color:#fff;border:1px solid var(--n);border-radius:8px;padding:.35em .8em;cursor:pointer;font:inherit;font-size:.85em}
+.btn:hover,.tpb button:hover{background:var(--n);color:#000}.wt button.on{background:var(--g);color:#000}
+.vn{display:flex;gap:1em;align-items:flex-end;animation:sl .6s}
+.vn .bx{flex:1;background:#0b1030ee;border:1px solid var(--n);border-radius:14px;padding:1em;font-size:1.3em;min-height:5.5em;line-height:1.5}
+.vn .bx b{display:block;margin-bottom:.3em}
+.char{width:9em;flex:none;animation:idle 3s ease-in-out infinite}
+@keyframes idle{50%{transform:translateY(-6px)}}
+.mouth{transform-box:fill-box;transform-origin:center}.talk .mouth{animation:mt .22s infinite alternate}
+@keyframes mt{to{transform:scaleY(2.6)}}
+.eye{animation:bl 4s infinite;transform-box:fill-box;transform-origin:center}@keyframes bl{95%{transform:scaleY(1)}98%{transform:scaleY(.1)}}
+.title{text-align:center;padding-top:6vh}.title h1{font-size:3.4em;color:var(--g);letter-spacing:.06em;text-shadow:0 0 30px #fbbf24aa;animation:gl2 2.5s infinite alternate}
+@keyframes gl2{to{text-shadow:0 0 50px #fbbf24,0 0 8px #fff}}
+.title h2{color:var(--n);font-weight:400;margin:.5em 0 1.2em}.title .clock{font-size:5em;animation:idle 3s infinite}
+.big{background:var(--g);color:#000;font-weight:900;font-size:1.3em;border:0;border-radius:12px;padding:.6em 1.6em;cursor:pointer;box-shadow:0 0 24px #fbbf24aa}
+.lock{display:flex;gap:.6em;justify-content:center;margin-bottom:.8em}.lock b{background:#000;border:2px solid var(--g);color:var(--g);font-size:1.8em;padding:.2em .6em;border-radius:8px;min-width:2.2em;text-align:center}
+.aw{display:grid;grid-template-columns:repeat(3,1fr);gap:1em;margin:1em 0}.aw div{background:#0b1030dd;border:2px solid var(--g);border-radius:14px;padding:1em;text-align:center;animation:fd 1s}.aw span{font-size:2.5em;display:block}
+#ov,#md{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:20;backdrop-filter:blur(4px)}
+#ov.show,#md.show{display:flex}
+#ov .in{width:min(46em,92vw);background:#0b1030;border:2px solid var(--g);border-radius:16px;padding:1.5em;text-align:center}
+#ob{position:relative;height:calc(3*6.4em);margin:1em 0}#ob .row{height:6em;font-size:1.25em}
+.mdb{width:min(40em,90vw);background:#f3ead6;color:#222;border-radius:12px;padding:1.5em;text-align:center;animation:zm .5s;font-size:1.2em}
+.mdb.dk{background:#0b1030;color:#fff;border:2px solid var(--g)}
+@keyframes zm{from{transform:scale(.4);opacity:0}}.mdb>span{font-size:5em}
+.door{position:relative;width:min(30em,90vw);height:22em;perspective:900px;overflow:hidden;border:4px solid var(--g);border-radius:8px}
+.door .room{position:absolute;inset:0;background:radial-gradient(circle,#fde68a,#4c1d95);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1em;text-align:center;color:#fff}
+.dp{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(#5b3a1e,#2e1b0a);display:flex;align-items:center;justify-content:center;font-size:3em;color:var(--g);font-weight:900;transition:transform 3s ease-in .5s}
+.dl{left:0;transform-origin:left}.dr{right:0;transform-origin:right}.open .dl{transform:rotateY(-105deg)}.open .dr{transform:rotateY(105deg)}
+#tp{background:#050816;border-top:2px solid var(--g);padding:.4em .8em}
+.tpb{display:flex;flex-wrap:wrap;gap:.35em;align-items:center}.tpb .tc{border-width:2px;font-weight:700}.tpb .g1{margin-left:.7em}
+#notes{display:none;font-size:.85em;padding:.4em;color:#fde68a}
+#toast{position:fixed;top:5em;left:50%;transform:translateX(-50%);background:var(--g);color:#000;font-weight:800;padding:.6em 1.4em;border-radius:12px;z-index:50;opacity:0;transition:opacity .3s;pointer-events:none;font-size:1.2em}
+#toast.on{opacity:1}#cf{position:fixed;inset:0;pointer-events:none;z-index:40}
+.tgl{position:fixed;right:.6em;top:.5em;z-index:30}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+body.pres .gm,body.pres #tp{display:none!important}
+#cine{position:fixed;inset:0;background:#000;z-index:60;display:none;overflow:hidden}#cine.show{display:block}
+#cine:before,#cine:after{content:"";position:absolute;left:0;right:0;height:11%;background:#000;z-index:2}#cine:before{top:0}#cine:after{bottom:0}
+.cam{position:absolute;inset:0;animation:cam 16s ease-in-out forwards}.cam svg{width:100%;height:100%}
+@keyframes cam{0%{transform:scale(1)}30%,55%{transform:scale(2.4) translateY(29%)}100%{transform:scale(3.2) translateY(-36%)}}
+#cine .cap{position:absolute;bottom:14%;left:0;right:0;text-align:center;font:2em Georgia,serif;z-index:3;text-shadow:0 0 12px #000;padding:0 2em}#cine .sk{position:absolute;right:1em;top:14%;z-index:3}
+#cbo{position:fixed;inset:0;display:none;z-index:25;background:#050816f2;padding:1em;flex-direction:column;align-items:center;gap:.5em}#cbo.show{display:flex}#cbo svg{width:min(100%,150vh);flex:1;min-height:0}
+.nd rect{fill:#1e1b4b;stroke:#38bdf8;stroke-width:2;cursor:pointer}.nd.sl rect{stroke:#fbbf24;stroke-width:4}.nd.lk rect{opacity:.3}.nd text{fill:#fff;font-size:15px;text-anchor:middle;pointer-events:none}
+.zE{transition:transform .4s;display:block}.zE.z{transform:scale(1.5)}
+</style></head><body>
+<div id="app">
+<header><span class="logo">🗝 BÍ MẬT CĂN PHÒNG SỐ 13</span><span class="pill" id="rl"></span><span id="stt" class="pill"></span><span class="sp"></span><span id="tm">0:00</span><button class="btn gm" onclick="mus()">🎵</button><button class="btn gm" onclick="sfxT()">🔊</button><input class="gm" type="range" min="0" max="1" step=".05" value=".5" oninput="setVol(this.value)" style="width:6em"><button class="btn gm" onclick="help()">? Phím tắt</button><button class="btn gm" onclick="tgl()">👨‍🏫 Bảng GV (T)</button></header>
+<main><div id="stage"></div><aside class="side"><h3>🏆 BẢNG ĐIỂM</h3><div id="sb"></div><p id="ss" style="margin-top:1em;color:var(--g)"></p></aside></main>
+<footer id="tp"><div class="tpb" id="tpb"></div><div id="notes"></div></footer>
+</div>
+<div id="ov"><div class="in"><h2 style="color:var(--g)">🏆 BẢNG XẾP HẠNG</h2><div id="ob"></div><button class="btn" onclick="board(0)">Đóng</button></div></div>
+<div id="md" onclick="if(event.target==this)closeMd()"></div><div id="cine"></div><div id="cbo"></div><div id="toast"></div><canvas id="cf"></canvas>
+<script>
+const $=s=>document.querySelector(s),T={num:["Trả lời đúng",100],code:["Giải mật mã",150],evi:["Phân tích vật chứng",200],con:["Phát hiện mâu thuẫn",200],fin:["Phá án cuối cùng",300]};
+const CH={hac:["Quản lý Hạc","#7c3aed"],tt:["Thám tử trưởng","#2563eb"],bao:["Bác Bảo (bảo vệ)","#15803d"],thu:["Cô Thư (thủ thư)","#be185d"],minh:["Bạn Minh (học sinh)","#c2410c"]};
+const LET="Ba chìa khóa, ba thử thách, một bí mật bị chôn giấu. Chỉ những người biết quan sát, suy luận và kết nối sự thật mới có thể mở cánh cửa số 13.";
+const EV=[
+{i:"🗝️",n:"Chìa khóa đồng",d:"Khắc số 13, nằm dưới tấm thảm trước cửa phòng. Khóa đã đóng 20 năm nhưng mặt chìa sáng bóng, không có chút gỉ nào."},
+{i:"📒",n:"Sổ trực",d:"Thứ Ba: MẤT ĐIỆN 13:13 – 13:40 (đồng hồ cổ chạy bằng điện nên dừng ở 13:13). 13:25: B. ký tuần tra tầng 2. Cầu dao tổng do Quản lý phụ trách. Chữ ký bằng mực tím."},
+{i:"🧵",n:"Mảnh vải xanh",d:"Từ chiếc áo choàng đạo cụ của đội văn nghệ, bị rách ở lớp 8B từ tuần trước. Không liên quan đến căn phòng."},
+{i:"🖊️",n:"Bút mực tím",d:"Bức thư viết bằng mực tím. Cả trường chỉ duy nhất Quản lý Hạc dùng mực tím; mọi thầy cô khác dùng mực xanh."},
+{i:"📷",n:"Ảnh lớp 9A – 2006",d:"Ảnh chụp 4 học sinh trước cửa phòng 13, một em đeo thẻ tên 'H. Hạc'. Mặt sau ghi: 'Hẹn mở lại khi đồng hồ dừng lúc 13:13 – 9A, năm 2006'."}];
+const W=[
+{c:"bao",l:["Tôi trực ở cổng suốt buổi trưa, không rời nửa bước.","Lúc mất điện tôi chỉ ngồi yên trong chòi, chẳng thấy ai vào trường cả."]},
+{c:"thu",l:["Tôi ngồi đọc sách dưới ánh đèn thư viện đến tận 14:00.","Tôi chẳng nghe thấy động tĩnh gì trên tầng 3."]},
+{c:"minh",l:["Em về nhà từ 12:30 rồi ạ, nên chuyện ở trường em không biết gì.","Nhưng em nhớ rõ lúc 13:15 có người mặc áo choàng xanh đi lên tầng 3."]},
+{c:"hac",l:["Chìa khóa phòng 13 ta cất giữ hai mươi năm, chưa ai chạm vào.","Vụ mất điện chỉ là sự cố, ta cũng ngạc nhiên như các em."]}];
+const R=[
+{t:"VÒNG 1: BỨC THƯ BÍ ẨN",tm:60,tip:"Mỗi câu 60 giây. Ghi nhớ kết quả: MÃ SỐ 1 = 13 sẽ dùng ở Vòng 4. Qua vòng khi giải xong 3 câu hoặc hết giờ.",
+ L:[["hac","Đồng hồ cổ của trường đã dừng ở 13:13, còn căn phòng số 13 khóa kín suốt hai mươi năm."],["hac","Sáng nay, một bức thư xuất hiện trước cửa phòng. Các thám tử, hãy đọc nó."],["tt","Tôi là Thám tử trưởng. Ba đội sẽ cùng giải mã. Hãy quan sát thật kỹ!"]],
+ Q:[{k:"num",q:"Cuối thư có dãy số: 1 – 3 – 6 – 10 – 15 – ?  Số tiếp theo là gì?",a:"21",e:"Hiệu hai số liền nhau tăng dần 2, 3, 4, 5 nên số tiếp theo cộng 6: 15 + 6 = 21 (số tam giác).",h:"Tính hiệu giữa hai số liền nhau."},
+ {k:"code",q:"Mật mã dịch chuyển: FDQ SKRQJ. Mỗi chữ cái đã bị đẩy tới 3 vị trí trong bảng chữ cái. Giải mã.",a:"CĂN PHÒNG (CAN PHONG)",e:"Lùi mỗi chữ 3 vị trí: F→C, D→A, Q→N; S→P, K→H, R→O, Q→N, J→G.",h:"F lùi 3 chữ cái là chữ nào?"},
+ {k:"code",q:"Ký hiệu: ◆ + ◆ = 10;  ◆ + ▲ = 7;  ▲ × ● = 12.  Tính ● + ▲ + ◆ = ?",a:"13",e:"◆ = 5, ▲ = 2, ● = 6. Tổng = 13, chính là số căn phòng. MÃ SỐ 1 = 13.",h:"Tìm ◆ trước."}]},
+{t:"VÒNG 2: NHỮNG VẬT CHỨNG",tm:90,tip:"Cho HS bấm vào từng vật chứng. Mảnh vải xanh là nhiễu. Khuyến khích HS giải thích lập luận để thưởng +100 logic.",
+ L:[["tt","Năm vật chứng được tìm thấy. Hãy nhấp vào từng vật để xem kỹ."],["tt","Cẩn thận, không phải vật nào cũng là manh mối thật."]],
+ Q:[{k:"evi",q:"Trong 5 vật chứng, vật nào là thông tin NHIỄU, không liên quan đến căn phòng 13? Vì sao?",a:"Mảnh vải xanh",e:"Nó là đạo cụ văn nghệ rách ở lớp 8B từ tuần trước nên không dính dáng đến phòng 13.",h:"Vật nào có nguồn gốc rõ ràng ở chỗ khác?"},
+ {k:"evi",q:"Đồng hồ dừng ở 13:13 có phải do siêu nhiên không? Hãy dùng vật chứng để giải thích.",a:"Không. Do mất điện từ 13:13 – 13:40",e:"Sổ trực ghi mất điện 13:13 – 13:40 và đồng hồ chạy điện nên dừng đúng lúc đó. Cầu dao do Quản lý phụ trách nên người có quyền mới tạo được sự cố này.",h:"Đọc kỹ sổ trực."},
+ {k:"evi",q:"Chỉ ra HAI vật chứng cho thấy phòng 13 vừa được mở gần đây, không phải 20 năm im lặng.",a:"Chìa khóa sáng bóng + sổ trực/mất điện",e:"Chìa khóa không gỉ chứng tỏ vừa được dùng. Mất điện 13:13 – 13:40 cho thấy có người cố ý tạo thời điểm không bị camera, đèn để ý. Bức ảnh còn xác nhận lời hẹn mở lại.",h:"Một vật nói về chất liệu, một vật nói về thời gian."}]},
+{t:"VÒNG 3: LỜI KHAI NHÂN CHỨNG",tm:75,tip:"Bấm tab nhân chứng để HS nghe lời khai. Mỗi câu một người. Sau câu thứ 4 có thể thưởng thêm cho đội giải thích tốt. Bảo bỏ cổng đi ăn, cô Thư ngủ trưa, Minh trốn học: nói dối vì sợ bị trách chứ không phải thủ phạm.",
+ L:[["tt","Bốn người có mặt ở trường hôm đó. Hãy so lời khai với vật chứng."],["tt","Mỗi lời khai đều có thể chứa một chi tiết không hợp lý."]],
+ Q:[{k:"con",q:"Lời khai của BÁC BẢO có điểm nào mâu thuẫn với vật chứng?",a:"Bảo nói không rời cổng, nhưng sổ trực ghi 13:25 ông ký tuần tra tầng 2",e:"Sổ trực chứng minh ông đã rời cổng.",h:"Xem sổ trực lúc 13:25."},
+ {k:"con",q:"Lời khai của CÔ THƯ có điểm nào mâu thuẫn?",a:"Cô nói đọc sách dưới đèn đến 14:00, nhưng 13:13 – 13:40 mất điện nên đèn không sáng",e:"Hai thông tin không thể cùng đúng.",h:"Đèn cần gì để sáng?"},
+ {k:"con",q:"Lời khai của MINH có điểm nào mâu thuẫn?",a:"Em về nhà lúc 12:30 nhưng lại nhìn thấy người lúc 13:15 ở trường",e:"Không thể vừa ở nhà vừa thấy người trên tầng 3. Áo choàng xanh lại là nhiễu.",h:"So sánh mốc giờ trong lời khai."},
+ {k:"con",q:"Lời khai của QUẢN LÝ HẠC có điểm nào mâu thuẫn với vật chứng?",a:"Ông nói chưa ai chạm vào chìa khóa 20 năm, nhưng chìa sáng bóng",e:"Chìa sáng bóng chứng tỏ có người dùng gần đây, và người giữ chìa chính là ông.",h:"Nhìn lại vật chứng số 1."}]},
+{t:"VÒNG 4: MỞ KHÓA CĂN PHÒNG 13",tm:90,tip:"Mật mã 6 số = 13 | 40 | 06 → 134006. Khi đội đúng câu cuối, cửa tự mở. Nhắc HS dùng lại manh mối vòng 1 và vật chứng.",
+ L:[["hac","Cánh cửa số 13 chỉ mở bằng một mật mã sáu chữ số, gồm ba khối."],["tt","Ba khối là ba manh mối các em đã thu thập. Hãy lần lượt tìm từng khối!"]],
+ Q:[{k:"code",q:"KHỐI 1: Số của căn phòng bị khóa (kết quả mật mã ký hiệu ở Vòng 1).",a:"13",e:"● + ▲ + ◆ = 13, trùng số phòng.",h:"Nhìn lại Vòng 1, câu 3."},
+ {k:"code",q:"KHỐI 2: Điện trở lại lúc 13 giờ mấy phút? (chỉ lấy số phút)",a:"40",e:"Sổ trực ghi mất điện 13:13 – 13:40.",h:"Mở sổ trực."},
+ {k:"code",q:"KHỐI 3: Hai chữ số cuối của năm chụp tấm ảnh lớp 9A.",a:"06",e:"Ảnh chụp năm 2006.",h:"Xem mặt sau tấm ảnh."},
+ {k:"code",q:"Ghép ba khối theo thứ tự thành mật mã sáu chữ số.",a:"134006",e:"13 + 40 + 06 = 134006. Cửa mở!",h:"Khối 1, rồi khối 2, rồi khối 3."}]},
+{t:"VÒNG 5: SỰ THẬT ĐƯỢC PHƠI BÀY",tm:120,tip:"Câu 1: kết luận Hạc + 3 bằng chứng (mực tím, chìa sáng bóng, lời khai mâu thuẫn, cầu dao, ảnh H. Hạc). Câu 2: động cơ nhân văn. Thưởng +100 cho giải thích logic tốt. Cuối game bấm NEXT ROUND để công bố giải.",
+ L:[["tt","Cửa đã mở. Giờ là lúc các đội kết luận: ai đã làm điều này, và vì sao?"],["hac","Các em đã chạm tới sự thật. Hãy để ta nghe kết luận của các em."]],
+ Q:[{k:"fin",q:"Ai đã mở phòng 13 trong lúc mất điện? Nêu ít nhất 3 bằng chứng.",a:"Quản lý Hạc",e:"Mực tím chỉ ông dùng; chìa sáng bóng nhưng ông nói chưa ai chạm vào; ông phụ trách cầu dao; trong ảnh 2006 có em H. Hạc. Bảo, Thư, Minh nói dối vì lý do riêng, không phải thủ phạm.",h:"Ai dùng mực tím? Ai giữ chìa và cầu dao?"},
+ {k:"fin",q:"Bí mật trong phòng 13 là gì và vì sao ông Hạc cố ý tạo ra vụ việc này?",a:"Hộp thời gian của lớp 9A (2006); ông thực hiện lời hẹn mở khi đồng hồ dừng 13:13 và thử thách học sinh để trao lại cho thế hệ mới",e:"Mặt sau ảnh ghi lời hẹn. Ông cắt điện để đồng hồ dừng đúng 13:13, viết thư mực tím để các em tự quan sát và suy luận. Đây không phải tội ác mà là một lời hẹn của tuổi học trò.",h:"Đọc lại mặt sau tấm ảnh và nội dung bức thư."}]}];
+const D=()=>({scr:"title",r:0,q:0,li:0,teams:[["ĐỘI ĐỎ","#ef4444"],["ĐỘI XANH","#3b82f6"],["ĐỘI VÀNG","#facc15"]].map(x=>({n:x[0],c:x[1],s:0,ok:0,no:0,cp:0})),sel:-1,steal:false,res:{},rev:false,hint:false,paused:false,t:60,tp:true,ws:0,seen:{},hist:[],links:[],bet:0,betT:-1,pos:0,ord:[0,1,2,3,4],evo:-1,exam:{},cbo:false,pick:-1});
+const PW=/[?&]p=1/.test(location.search);let PM=false;const PR=()=>PW||PM;if(PW)document.body.classList.add("pres");let S;try{S=JSON.parse(localStorage.getItem("room13"))}catch(e){}S=Object.assign(D(),S||{});
+const save=()=>{if(PW)return;try{localStorage.setItem("room13",JSON.stringify(S))}catch(e){}},fmt=t=>Math.floor(t/60)+":"+String(t%60).padStart(2,"0"),key=()=>S.r+"-"+S.q,CQ=()=>R[S.r].Q[S.q];
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),2200)}
+function ch(id,talk,mood){const col=CH[id][1];
+const hair={hac:'<path d="M32 50q0-30 28-30t28 30q-10-14-28-14t-28 14z" fill="#d1d5db"/>',tt:'<path d="M30 42h60l-6-16q-24-10-48 0z" fill="#92400e"/><rect x="26" y="40" width="68" height="6" rx="3" fill="#78350f"/>',bao:'<path d="M32 46q0-26 28-26t28 26z" fill="#166534"/><rect x="30" y="44" width="60" height="5" fill="#14532d"/>',thu:'<circle cx="60" cy="16" r="10" fill="#4a2c1a"/><path d="M32 52q0-32 28-32t28 32q-10-18-28-18t-28 18z" fill="#4a2c1a"/>',minh:'<path d="M32 50l6-26 10 12 12-16 12 16 10-12 6 26q-26-14-56 0z" fill="#1f2937"/>'}[id];
+const acc={hac:'<circle cx="72" cy="60" r="8" fill="none" stroke="#fbbf24" stroke-width="2"/>',thu:'<g fill="none" stroke="#111" stroke-width="2"><circle cx="49" cy="60" r="7"/><circle cx="71" cy="60" r="7"/></g>',bao:'<path d="M46 76q14-8 28 0q-14 4-28 0z" fill="#374151"/>',tt:'<circle cx="92" cy="122" r="10" fill="none" stroke="#fbbf24" stroke-width="3"/><path d="M99 130l12 14" stroke="#fbbf24" stroke-width="4"/>',minh:""}[id];
+return `<svg class="char ${talk?"talk":""}" viewBox="0 0 120 170"><rect x="22" y="94" width="76" height="70" rx="22" fill="${col}"/><path d="M52 94l8 14 8-14z" fill="#fff"/><circle cx="60" cy="58" r="28" fill="#f1c8a5"/>${hair}<circle cx="49" cy="60" r="3.5" fill="#111" class="eye"/><circle cx="71" cy="60" r="3.5" fill="#111" class="eye"/>${acc}<path d="${BR[mood||"n"]}" stroke="#222" stroke-width="2.5" fill="none"/><ellipse class="mouth" cx="60" cy="77" rx="${mood=="shock"?4:6}" ry="${mood=="shock"?5:2}" fill="#7f1d1d"/></svg>`}
+let TY;function typeT(el,txt){clearInterval(TY);let i=0;el.textContent="";TY=setInterval(()=>{el.textContent=txt.slice(0,++i);if(i>=txt.length){clearInterval(TY);document.querySelectorAll(".char").forEach(c=>c.classList.remove("talk"))}},24)}
+function vn(id,txt,m){return `<div class="vn">${ch(id,1,m||(id=="tt"?"happy":id=="hac"?"n":"sus"))}<div class="bx"><b style="color:${CH[id][1]=="#be185d"?"#f9a8d4":"#93c5fd"}">${CH[id][0]}</b><span class="tx" data-t="${txt.replace(/"/g,"&quot;")}"></span></div></div>`}
+function extra(){let h="";const r=S.r;
+if(r==0)h+=`<div class="letter"><h3>✉ BỨC THƯ BÍ ẨN</h3><br><p>“${LET}”</p><br><small>Viết bằng mực tím, không đề tên.</small></div>`;
+if(r==2){h+=`<div class="card"><div class="wt">${W.map((w,i)=>`<button class="${S.ws==i?"on":""}" onclick="S.ws=${i};render()">${CH[w.c][0]}</button>`).join("")}</div>${vn(W[S.ws].c,W[S.ws].l.join(" "))}</div>`}
+if(r==3){const f=i=>S.res[`3-${i}`]!=null?["13","40","06","134006"][i]:"??";h+=`<div class="card"><div class="lock">${[0,1,2].map(i=>`<b>${f(i)}</b>`).join("")}</div><div class="lock"><b>${S.res["3-3"]!=null?"134006":"– – – – – –"}</b></div><div style="text-align:center"><button class="btn" onclick="door()">🚪 Xem cánh cửa số 13</button></div></div>`}
+if(r>=1)h+=`<div class="card"><b>🔎 Vật chứng (nhấp để xem)</b><br><br><div class="evg">${EV.map((e,i)=>`<div class="ev ${S.seen[i]?"seen":""}" onclick="openEv(${i})"><span>${e.i}</span>${e.n}</div>`).join("")}</div></div>`;
+return h}
+function render(){const st=$("#stage"),R0=R[S.r];$("#rl").textContent=S.scr=="title"?"Chờ bắt đầu":S.scr=="end"?"KẾT THÚC":RT();$("#stt").textContent=S.paused?"⏸ TẠM DỪNG":"▶ ĐANG CHƠI";
+if(S.scr=="title"){st.innerHTML=`<div class="title"><div class="clock">🕐</div><h1>BÍ MẬT CĂN PHÒNG SỐ 13</h1><h2>THE MYSTERY OF ROOM 13 · Ba đội thám tử, một cánh cửa, một sự thật</h2><button class="big" onclick="cine()">▶ START GAME</button></div>`}
+else if(S.scr=="end"){const B=(k)=>{const m=Math.max(...S.teams.map(t=>t[k]));return S.teams.filter(t=>t[k]==m).map(t=>t.n).join(" & ")};
+st.innerHTML=`<div class="title"><h1>🏆 SỰ THẬT ĐƯỢC PHƠI BÀY</h1><div class="aw"><div><span>🕵️</span><b>ĐẠI THÁM TỬ</b><h2>${B("s")}</h2>(điểm cao nhất)</div><div><span>🧠</span><b>ĐỘI SUY LUẬN XUẤT SẮC</b><h2>${B("ok")}</h2>(nhiều câu đúng nhất)</div><div><span>🔐</span><b>ĐỘI GIẢI MÃ NHANH NHẤT</b><h2>${B("cp")}</h2>(nhiều điểm giải mật mã nhất)</div></div><button class="big" onclick="board(1)">🏆 Bảng xếp hạng</button> <button class="btn" onclick="reset()">Chơi lại</button></div>`;if(!render.c){render.c=1;confetti(300)}}
+else if(S.scr=="fork"){st.innerHTML=`<h2 class="rt">NGÃ RẼ ĐIỀU TRA</h2><div class="cols"><div class="card" style="cursor:pointer" onclick="pickF(0)"><h2>📂 Hướng A: Lần theo vật chứng</h2><p>Khám nghiệm vật chứng trước, rồi mới thẩm vấn nhân chứng.</p></div><div class="card" style="cursor:pointer" onclick="pickF(1)"><h2>🗣 Hướng B: Thẩm vấn nhân chứng</h2><p>Nghe lời khai trước, rồi đối chiếu với vật chứng.</p></div></div><p>Cả hai hướng đều dẫn tới cùng mật mã cuối và cùng sự thật.</p>`}
+else if(S.scr=="intro"){const l=R0.L[S.li];st.innerHTML=`<h2 class="rt">${RT()}</h2><div class="cols"><div class="card">${vn(l[0],l[1])}<br><button class="btn" onclick="next()">Tiếp ▶ (${S.li+1}/${R0.L.length})</button></div><div>${extra()}</div></div>`}
+else{const Q=CQ(),k=key(),rs=S.res[k],p=T[Q.k][1];
+st.innerHTML=`<h2 class="rt">${RT()}</h2><div class="cols"><div><div class="card"><div class="qh"><span class="badge">${T[Q.k][0]} · +${p}</span><span>Câu ${S.q+1}/${R0.Q.length}</span></div><div class="qt">${Q.q}</div><div class="tb"><i id="tb"></i></div>${hintHTML(Q)}${rs>=0?`<div class="done">✔ ${S.teams[rs].n} đã giải đúng</div>`:""}${S.rev&&!PR()?`<div class="ans"><b>ĐÁP ÁN:</b> ${Q.a}<p>${Q.e}</p></div>`:""}</div></div><div>${extra()}</div></div>`}
+document.querySelectorAll(".tx").forEach(e=>typeT(e,e.dataset.t));
+$("#tp").style.display=S.tp?"block":"none";
+const q=S.scr=="q"?CQ():null;$("#notes").innerHTML=`🔒 <b>Ghi chú GV:</b> ${R[S.r]?R[S.r].tip:""}${q?`<br><b>Đáp án:</b> ${q.a}`:""}`;
+updT();updB();updCB();updMd();save()}
+function updT(){$("#tm").textContent=S.scr=="q"?fmt(S.t):"--:--";const b=$("#tb");if(b)b.style.width=(S.t/R[S.r].tm*100)+"%"}
+function mkB(el,rowH){const T2=S.teams,srt=[...T2.keys()].sort((a,b)=>T2[b].s-T2[a].s),mx=Math.max(1,...T2.map(t=>t.s));
+if(!el.children.length)T2.forEach((t,i)=>{el.insertAdjacentHTML("beforeend",`<div class="row" id="${el.id}${i}"><div class="rk"></div><div class="nm"><b></b><small></small></div><div class="sc"></div><div class="bar"><i></i></div></div>`)});
+T2.forEach((t,i)=>{const r=el.children[i],pos=srt.indexOf(i),rank=1+T2.filter(o=>o.s>t.s).length;r.style.setProperty("--c",t.c);r.style.top=pos*rowH+"em";r.querySelector(".rk").textContent=rank;r.querySelector("b").textContent=t.n;r.querySelector("small").textContent=`✔ ${t.ok}${t.cb>1?" 🔥x"+t.cb:""}${S.betT==i&&S.bet?" 🎲"+S.bet:""} · ${S.sel==i?(S.steal?"⚡ CƯỚP QUYỀN":"🎤 ĐANG TRẢ LỜI"):"chờ"}`;r.querySelector(".sc").textContent=t.s;r.querySelector(".bar i").style.width=t.s/mx*100+"%";r.classList.toggle("lead",rank==1&&t.s>0);r.classList.toggle("act",S.sel==i)})}
+function updB(){mkB($("#sb"),5.6);mkB($("#ob"),6.4);$("#ss").textContent=S.sel>=0?`Đang chọn: ${S.teams[S.sel].n}${S.steal?" (cướp quyền: ½ điểm)":""}`:"Chưa chọn đội trả lời"}
+function award(i,p,l){snap(l||"Điểm "+(p>0?"+":"")+p+" "+S.teams[i].n);const t=S.teams[i];t.s=Math.max(0,t.s+p)}
+function sel(i){S.sel=i;render()}
+function correct(){if(S.scr!="q")return toast("Chưa ở phần câu hỏi");if(S.sel<0)return toast("Hãy chọn đội trả lời trước");const k=key();if(S.res[k]!=null)return toast("Câu này đã chấm");snap("Đúng: "+S.teams[S.sel].n);const Q=CQ(),t=S.teams[S.sel];let p=T[Q.k][1];if(S.steal)p=Math.round(p/2);t.cb=(t.cb||0)+1;const cb=t.cb>1?Math.min(150,(t.cb-1)*50):0,bet=S.betT==S.sel?S.bet:0;t.s+=p+cb+bet;t.ok++;if(Q.k=="code")t.cp+=p;S.res[k]=S.sel;S.rev=true;S.steal=false;S.bet=0;toast(`✔ ${t.n} +${p}${cb?` · combo 🔥 +${cb}`:""}${bet?` · cược +${bet}`:""}`);sfx.ok();confetti(80);render();if(S.r==3&&S.q==3)setTimeout(door,900)}
+function wrong(){if(S.scr!="q")return;if(S.sel<0)return toast("Hãy chọn đội");snap("Sai: "+S.teams[S.sel].n);const t=S.teams[S.sel];t.no++;t.cb=0;let l=0;if(S.betT==S.sel&&S.bet){l=Math.min(S.bet,t.s);t.s-=l}S.bet=0;toast(`✘ ${t.n} sai${l?` −${l} (cược)`:""}. Đội khác có thể cướp quyền`);sfx.no();S.sel=-1;S.steal=true;render()}
+function betF(){if(S.sel<0)return toast("Chọn đội đặt cược");const t=S.teams[S.sel],v=parseInt(prompt(`${t.n} có ${t.s} điểm. Cược bao nhiêu? (0–${t.s})`,"50"));if(!(v>=0)||v>t.s)return toast("Mức cược không hợp lệ");S.bet=v;S.betT=S.sel;toast(`🎲 ${t.n} cược ${v}: đúng +${v}, sai −${v}`);render()}
+function adj(sg){if(S.sel<0)return toast("Hãy chọn đội");const v=parseInt(prompt(sg>0?"Cộng bao nhiêu điểm?":"Trừ bao nhiêu điểm?","50"));if(!v)return;award(S.sel,sg*Math.abs(v));toast(`${sg>0?"+":"−"}${Math.abs(v)} cho ${S.teams[S.sel].n}`);render()}
+function bonus(p,m){if(S.sel<0)return toast("Hãy chọn đội");award(S.sel,p);toast(`${m} cho ${S.teams[S.sel].n}`);render()}
+function hint(){if(S.scr!="q")return;const lv=S.hint|0;if(lv>=3)return toast("Đã dùng hết 3 cấp gợi ý");if(S.sel<0)return toast("Hãy chọn đội xin gợi ý");const c=[20,40,60][lv];S.hint=lv+1;award(S.sel,-c,"Gợi ý cấp "+(lv+1));sfx.hint();toast(`Gợi ý cấp ${lv+1}: −${c} điểm`);render()}
+function reveal(){if(S.scr!="q")return;S.rev=true;if(S.res[key()]==null)S.res[key()]=-1;render()}
+function steal(){S.steal=!S.steal;toast(S.steal?"⚡ Cướp quyền: đúng được ½ điểm":"Tắt cướp quyền");render()}
+function rq(){S.bet=0;S.rev=false;S.hint=0;S.steal=false;S.t=R[S.r].tm}
+function go(p){S.pos=p;S.r=S.ord[p];S.q=0;S.li=0;S.scr="intro";rq();render()}
+function pickF(i){if(PW)return;S.ord=i?[0,2,1,3,4]:[0,1,2,3,4];go(1)}
+const RT=()=>R[S.r].t.replace(/VÒNG \d/,"VÒNG "+(S.pos+1));
+function start(){au();if(!drone)music();if(S.scr!="title"&&!confirm("Bắt đầu lại từ Vòng 1 (giữ điểm)?"))return;S.paused=false;go(0)}
+function next(){if(S.scr=="intro"){if(S.li<R[S.r].L.length-1)S.li++;else{S.scr="q";rq()}render()}else if(S.scr=="q"){if(S.q<R[S.r].Q.length-1){S.q++;rq();render()}else nextR()}}
+function nextR(){if(S.scr=="title")return start();if(S.scr=="fork")return toast("Hãy chọn hướng điều tra");if(S.scr=="q"&&R[S.r].Q.some((_,i)=>S.res[S.r+"-"+i]==null)&&!confirm("Vòng này còn câu chưa xử lý. Vẫn chuyển vòng?"))return;if(S.pos==0){S.scr="fork";return render()}if(S.pos<4)go(S.pos+1);else endSeq()}
+function prevR(){if(S.scr=="end"){S.scr="q";S.pos=4;S.r=4;S.q=1;return render()}if(S.scr=="fork")return go(0);if(S.pos>0)go(S.pos-1);else toast("Đang ở vòng đầu")}
+function pause(v){S.paused=v;toast(v?"⏸ Tạm dừng":"▶ Tiếp tục");render()}
+function addT(s){S.t=Math.max(0,S.t+s);updT();save()}
+function reset(){if(confirm("RESET: xóa toàn bộ điểm và tiến trình?")){S=D();render.c=0;localStorage.removeItem("room13");closeMd();board(0);render()}}
+function board(v){$("#ov").classList.toggle("show",!!v);updB()}
+function tgl(){S.tp=!S.tp;render()}
+function openEv(i){S.seen[i]=1;S.evo=i;save();render()}
+function exam(i){if(PW)return;S.exam[i]=1;sfx.hint();render()}
+function closeMd(){$("#md").classList.remove("show");MDS="";if(S.evo>=0&&!PW){S.evo=-1;save()}}
+function door(f){showMd(`<div class="mdb dk"><div class="door" id="dr"><div class="room"><span style="font-size:4em">📦</span><h3>HỘP THỜI GIAN LỚP 9A · 2006</h3><p>Bên trong: những lá thư, một tấm ảnh và lời hẹn: “Khi đồng hồ dừng ở 13:13, hãy mở cửa.”</p></div><div class="dp dl">1</div><div class="dp dr">3</div></div><p id="sec" style="margin:.6em;min-height:3em"></p>${f?'<button class="btn" onclick="finish()">🏆 Công bố giải thưởng</button>':'<button class="btn" onclick="closeMd()">Đóng</button>'}</div>`,"door");setTimeout(()=>{$("#dr").classList.add("open");sfx.door();confetti(150)},300);if(f)setTimeout(()=>typeT($("#sec"),"Bí mật là một lời hẹn: hộp thời gian 9A được mở sau hai mươi năm. Hạc không phạm tội, ông chỉ muốn tìm những thám tử nhỏ xứng đáng giữ lại ký ức ấy."),3800)}
+function help(){$("#md").innerHTML=`<div class="mdb dk" style="text-align:left"><h3>⌨ Phím tắt giáo viên</h3><p>Space: tạm dừng/tiếp tục · N hoặc →: Tiếp · P: vòng trước · M: vòng sau<br>1 / 2 / 3: chọn đội Đỏ/Xanh/Vàng · C: Đúng · W: Sai · H: Gợi ý · R: Hiện đáp án<br>S: Cướp quyền · L: Bảng xếp hạng · T: Ẩn/hiện bảng GV · G: Ghi chú GV · Esc: đóng</p><br><button class="btn" onclick="closeMd()">Đóng</button></div>`;$("#md").classList.add("show")}
+const bs=(t,f,c)=>`<button ${c?`class="tc" style="border-color:${c};color:${c}"`:""} onclick="${f}">${t}</button>`;
+$("#tpb").innerHTML=bs("START GAME","start()")+bs("PAUSE","pause(true)")+bs("RESUME","pause(false)")+bs("PREVIOUS ROUND","prevR()")+bs("NEXT ROUND","nextR()")+bs("TIẾP ▶","next()")+`<span class="g1"></span>`+["ĐỎ","XANH","VÀNG"].map((n,i)=>bs("SELECT: "+n,`sel(${i})`,["#ef4444","#60a5fa","#facc15"][i])).join("")+`<span class="g1"></span>`+bs("ANSWER CORRECT","correct()")+bs("ANSWER WRONG","wrong()")+bs("CƯỚP QUYỀN","steal()")+bs("ADD POINTS","adj(1)")+bs("SUBTRACT POINTS","adj(-1)")+bs("+100 LOGIC","bonus(100,'+100 giải thích logic')")+bs("SHOW HINT (3 cấp)","hint()")+bs("REVEAL ANSWER","reveal()")+bs("+30s","addT(30)")+bs("SHOW LEADERBOARD","board(1)")+bs("GHI CHÚ GV (G)","const n=$('#notes');n.style.display=n.style.display=='block'?'none':'block'")+bs("ĐẶT CƯỢC","betF()")+bs("CASE BOARD (B)","cbT()")+bs("LỊCH SỬ ĐIỂM","hist()")+bs("↶ HOÀN TÁC (U)","restore(S.hist.length-1)")+bs("MỞ MÀN HÌNH TRÌNH CHIẾU","pwin()")+bs("CHẾ ĐỘ TRÌNH CHIẾU (V)","pm()")+bs("RESET GAME","reset()");
+setInterval(()=>{if(PW)return;if(!S.paused&&S.scr=="q"&&S.res[key()]==null&&S.t>0){S.t--;if(S.t<=10)sfx.tick();updT();if(S.t==0)toast("⏰ HẾT GIỜ!");save()}},1000);
+addEventListener("keydown",e=>{if(e.target.tagName=="INPUT"||PW)return;const k=e.key.toLowerCase();({" ":()=>pause(!S.paused),n:next,arrowright:next,p:prevR,m:nextR,"1":()=>sel(0),"2":()=>sel(1),"3":()=>sel(2),c:correct,w:wrong,h:hint,r:reveal,s:steal,l:()=>board(!$("#ov").classList.contains("show")),t:tgl,g:()=>{const n=$("#notes");n.style.display=n.style.display=="block"?"none":"block"},u:()=>restore(S.hist.length-1),b:cbT,v:pm,escape:()=>{closeMd();board(0);if(S.cbo)cbT()}})[k]?.();if(k==" ")e.preventDefault()});
+const cv=$("#cf"),cx=cv.getContext("2d");let P=[],run=0;function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener("resize",rs);
+function confetti(n){for(let i=0;i<n;i++)P.push({x:Math.random()*cv.width,y:-10-Math.random()*cv.height/2,vx:Math.random()*4-2,vy:2+Math.random()*4,s:5+Math.random()*7,c:["#fbbf24","#38bdf8","#ef4444","#a78bfa","#fff"][i%5],r:Math.random()*6});if(!run){run=1;loop()}}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.r+=.1;cx.fillStyle=p.c;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillRect(0,0,p.s,p.s*.6);cx.restore()});P=P.filter(p=>p.y<cv.height+20);if(P.length)requestAnimationFrame(loop);else{run=0;cx.clearRect(0,0,cv.width,cv.height)}}
+const BR={n:"M42 50h14M64 50h14",sus:"M42 51l14 4M64 55l14-4",shock:"M42 45h14M64 45h14",happy:"M42 49q7-4 14 0M64 49q7-4 14 0"};
+const XH=["Dưới đèn UV: vân mực tím ở cán chìa, cùng loại mực với bức thư. Chìa mới được lau sáng trong tuần này.","Dòng chữ mờ ở lề: 'Cầu dao tổng chỉ ngắt được bằng chìa của Quản lý'. Chữ ký mực tím giống bức thư.","Nhãn trong cổ áo: 'ĐẠO CỤ VĂN NGHỆ – 8B'. Vải dính bụi sân khấu, hoàn toàn không có bụi tầng 3.","Cán bút có vết mực tím khô, cùng sắc với bức thư và chữ ký trong sổ trực.","Dưới ánh đèn hiện bốn tên: Lan, Hạc, Sơn, Mai, kèm ghi chú: 'Chôn hộp thời gian trong phòng 13'."];
+EV.forEach((e,i)=>e.x=XH[i]);
+let AC,MG,musicOn=true,sfxOn=true,vol=.5,drone,MDS="",CT,CK;
+function au(){if(!AC){try{AC=new(window.AudioContext||webkitAudioContext)();MG=AC.createGain();MG.gain.value=vol;MG.connect(AC.destination)}catch(e){}}if(AC&&AC.state=="suspended")AC.resume();return AC}
+function tone(f,d,ty,v,at,f2){if(!sfxOn||PW||!au())return;const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+(at||0);o.type=ty||"sine";o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v||.2,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(MG);o.start(t);o.stop(t+d)}
+const sfx={tick:()=>tone(1800,.04,"square",.08),ok:()=>[523,659,784,1046].forEach((f,i)=>tone(f,.25,"triangle",.2,i*.1)),no:()=>tone(160,.5,"sawtooth",.2,0,80),door:()=>tone(90,2.5,"sawtooth",.15,0,40),hint:()=>tone(880,.3,"sine",.2,0,440)};
+function music(){if(drone){drone.forEach(o=>o.stop());drone=null}if(!musicOn||PW||!au())return;const g=AC.createGain();g.gain.value=.05;g.connect(MG);drone=[55,82.4,110.5].map(f=>{const o=AC.createOscillator(),lp=AC.createBiquadFilter();o.type="sawtooth";o.frequency.value=f;lp.frequency.value=300;o.connect(lp);lp.connect(g);o.start();return o})}
+function mus(){musicOn=!musicOn;music();toast(musicOn?"🎵 Bật nhạc nền":"🔇 Tắt nhạc nền")}
+function sfxT(){sfxOn=!sfxOn;toast(sfxOn?"🔊 Bật hiệu ứng":"🔇 Tắt hiệu ứng")}
+function setVol(v){vol=+v;if(MG)MG.gain.value=vol}
+const mk=a=>a.replace(/(\S)(\S*)/g,(m,a1,r)=>a1+r.replace(/[^\s()\/+,.:–-]/g,"•"));
+function hintHTML(Q){const l=S.hint|0;if(!l)return"";let h=`💡 Cấp 1: ${Q.h}`;if(l>1)h+=`<br>🔎 Cấp 2 (đáp án bị che): ${mk(Q.a)}`;if(l>2)h+=`<br>🧩 Cấp 3: ${Q.e}`;return `<div class="hint">${h}</div>`}
+function snap(l){S.hist.push({l,tm:new Date().toLocaleTimeString("vi-VN"),tt:JSON.parse(JSON.stringify(S.teams)),rs:JSON.parse(JSON.stringify(S.res))});if(S.hist.length>60)S.hist.shift()}
+function hist(){showMd(`<div class="mdb dk" style="text-align:left;max-height:85vh;overflow:auto"><h3>📜 Lịch sử điểm</h3><p>Chỉnh điểm thủ công:</p>`+S.teams.map((t,i)=>`<label style="margin-right:1em">${t.n} <input id="ed${i}" type="number" value="${t.s}" style="width:5em"></label>`).join("")+` <button class="btn" onclick="editS()">Lưu</button><hr style="margin:.7em 0">`+(S.hist.length?S.hist.map((e,i)=>`<div style="margin:.3em 0">${e.tm} · ${e.l} <small>(trước: ${e.tt.map(t=>t.s).join("/")})</small> <button class="btn" onclick="restore(${i})">Khôi phục</button></div>`).reverse().join(""):"<i>Chưa có thay đổi.</i>")+`<br><button class="btn" onclick="closeMd()">Đóng</button></div>`,"hist")}
+function editS(){snap("Chỉnh tay");S.teams.forEach((t,i)=>{t.s=Math.max(0,parseInt($("#ed"+i).value)||0)});toast("Đã lưu điểm");closeMd();render()}
+function restore(i){const e=S.hist[i];if(!e)return toast("Không còn gì để hoàn tác");S.teams=JSON.parse(JSON.stringify(e.tt));S.res=JSON.parse(JSON.stringify(e.rs||{}));S.hist.length=i;if(S.res[key()]==null)S.rev=false;toast("↶ Đã khôi phục trước: "+e.l);closeMd();render()}
+const NODES=[["Bác Bảo","p"],["Cô Thư","p"],["Bạn Minh","p"],["Quản lý Hạc","p"],["Chìa khóa","e"],["Sổ trực","e"],["Mảnh vải xanh","e"],["Bút mực tím","e"],["Ảnh 9A 2006","e"],["13:13 mất điện","t"],["13:25 tuần tra","t"],["13:40 có điện","t"]];
+const LK=[[3,4,"Chìa sáng bóng: người giữ chìa vừa dùng"],[3,7,"Chỉ Hạc dùng mực tím như bức thư"],[3,8,"H. Hạc là học sinh 9A lập lời hẹn"],[3,9,"Hạc phụ trách cầu dao, tạo mất điện 13:13"],[0,5,"Sổ trực ghi Bảo tuần tra tầng 2, trái lời khai"],[0,10,"13:25 Bảo đã rời cổng"],[1,11,"Điện chỉ có lại lúc 13:40, trái lời khai đọc dưới đèn"],[2,6,"Áo choàng xanh Minh nhắc là đạo cụ, manh mối nhiễu"],[5,9,"Sổ trực ghi giờ mất điện"],[5,11,"Sổ trực ghi giờ có điện lại"],[7,5,"Mực tím trùng chữ ký trong sổ"]];
+function cbT(){if(PW)return;S.cbo=!S.cbo;S.pick=-1;render()}
+function pickN(i){if(PW)return;if(NODES[i][1]=="e"&&!S.seen[i-4])return toast("Hãy xem vật chứng này trước");if(S.pick<0)S.pick=i;else if(S.pick==i)S.pick=-1;else{const a=S.pick;S.pick=-1;const k=LK.findIndex(l=>(l[0]==a&&l[1]==i)||(l[0]==i&&l[1]==a));if(k<0){toast("✘ Chưa có căn cứ nối hai mục này");sfx.no()}else if(S.links.includes(k))toast("Đã nối rồi");else{S.links.push(k);toast("✔ "+LK[k][2]);sfx.ok();if(S.sel>=0)award(S.sel,50,"Nối manh mối")}}render()}
+function updCB(){const c=$("#cbo");c.className=S.cbo?"show":"";if(!S.cbo)return;const X=[130,400,670],cn=[0,0,0],P=[];NODES.forEach((n,i)=>{const col="pet".indexOf(n[1]);P[i]=[X[col],[[70,165,260,355],[50,135,220,305,390],[100,230,360]][col][cn[col]++]]});
+c.innerHTML=`<h2 style="color:#fbbf24">🕵 BẢNG ĐIỀU TRA <small style="font-size:.5em;color:#fff">Nhấp hai mục để nối. Nhân vật | Vật chứng | Mốc thời gian. Đội đang chọn nối đúng được +50.</small></h2><svg viewBox="0 0 800 440">${S.links.map(k=>{const a=P[LK[k][0]],b=P[LK[k][1]];return `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#fbbf24" stroke-width="4"/>`}).join("")}${NODES.map((n,i)=>{const lk=n[1]=="e"&&!S.seen[i-4];return `<g class="nd ${S.pick==i?"sl":""} ${lk?"lk":""}" onclick="pickN(${i})"><rect x="${P[i][0]-85}" y="${P[i][1]-24}" width="170" height="48" rx="10"/><text x="${P[i][0]}" y="${P[i][1]+5}">${lk?"🔒 Chưa xem":n[0]}</text></g>`}).join("")}</svg><div style="text-align:center">${S.links.map(k=>"✔ "+LK[k][2]).slice(-3).join("<br>")}</div>${PW?"":'<button class="btn" onclick="cbT()">Đóng (B)</button>'}`}
+function showMd(h,s){$("#md").innerHTML=h;$("#md").classList.add("show");MDS=s||""}
+function updMd(){if(S.evo>=0){const e=EV[S.evo],i=S.evo,ex=S.exam[i];showMd(`<div class="mdb"><span class="zE ${ex?"z":""}" style="font-size:5em">${e.i}</span><h2>${e.n}</h2><p style="margin:.6em 0">${e.d}</p>${ex?`<p style="background:#fef3c7;border:2px dashed #b45309;border-radius:8px;padding:.6em"><b>🔍 Khám nghiệm:</b> ${e.x}</p>`:""}<br>${PW?"":`${ex?"":`<button class="btn" style="color:#000" onclick="exam(${i})">🔍 Khám nghiệm</button> `}<button class="btn" style="color:#000" onclick="closeMd()">Đóng</button>`}</div>`,"ev")}else if(MDS=="ev")closeMd()}
+function pm(){PM=!PM;document.body.classList.toggle("pres",PM||PW);toast(PM?"Chế độ trình chiếu: ẩn đáp án và điều khiển (V để thoát)":"Chế độ giáo viên");render()}
+function pwin(){window.open(location.href.split("?")[0]+"?p=1","room13pres")}
+const CIN=["Trường cổ vẫn đứng đó, im lặng suốt hai mươi năm...","Một hôm, chiếc đồng hồ cổ dừng lại đúng lúc 13:13.","Trước cửa căn phòng số 13, có một bức thư không đề tên.","Ba đội thám tử, sự thật đang chờ các em."];
+function cine(){au();music();const c=$("#cine");c.className="show";c.innerHTML=`<div class="cam"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#0a0e2a"/><circle cx="335" cy="40" r="20" fill="#fde68a"/><polygon points="50,72 200,22 350,72" fill="#312e81"/><rect x="60" y="72" width="280" height="228" fill="#1e1b4b"/><circle cx="200" cy="62" r="20" fill="#f5e9c8" stroke="#fbbf24" stroke-width="3"/><line x1="200" y1="62" x2="200" y2="46" stroke="#111" stroke-width="1.6" transform="rotate(78 200 62)"/><line x1="200" y1="62" x2="200" y2="51" stroke="#111" stroke-width="2.4" transform="rotate(36 200 62)"/><g fill="#fbbf24" opacity=".6"><rect x="85" y="100" width="30" height="40"/><rect x="285" y="100" width="30" height="40"/><rect x="85" y="165" width="30" height="40"/><rect x="285" y="165" width="30" height="40"/></g><rect x="168" y="215" width="64" height="85" fill="#5b3a1e" stroke="#fbbf24" stroke-width="2"/><text x="200" y="265" fill="#fbbf24" font-size="26" font-weight="900" text-anchor="middle">13</text></svg></div><div class="cap"><span id="cp"></span></div><button class="btn sk" onclick="endCine()">Bỏ qua ▶</button>`;let i=0;clearInterval(CK);CK=setInterval(()=>sfx.tick(),1000);const step=()=>{if(!c.classList.contains("show"))return;if(i>=CIN.length){sfx.door();CT=setTimeout(endCine,2500);return}typeT($("#cp"),CIN[i++]);CT=setTimeout(step,4000)};step()}
+function endCine(){clearTimeout(CT);clearInterval(CK);$("#cine").className="";start()}
+function endSeq(){sfx.door();door(1)}
+function finish(){closeMd();S.scr="end";render.c=0;render();board(1);sfx.ok()}
+let SIG="";addEventListener("storage",e=>{if(!PW||e.key!="room13"||!e.newValue)return;const n=JSON.parse(e.newValue),g=JSON.stringify({...n,t:0});if(g==SIG){S.t=n.t;updT();return}SIG=g;S=Object.assign(D(),n);render()});
+
+if(PW)document.body.classList.add("pres");render();
+</script></body></html>
